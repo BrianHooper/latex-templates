@@ -1,0 +1,103 @@
+\definecolor{headerbg}{rgb}{0.145098, 0.219608, 0.243137}
+\definecolor{bodybg}{rgb}{0.917647, 0.882353, 0.843137}
+
+\definecolor{boxheader}{rgb}{0.517647, 0.474510, 0.392157}
+\definecolor{boxbg}{rgb}{0.796078, 0.729412, 0.654902}
+
+\selectcolormodel{rgb}
+\mode<presentation>
+
+
+\setbeamercolor{headline}{fg=boxbg,bg=boxbg}
+\setbeamercolor{footline}{fg=boxbg, bg=boxbg}
+\setbeamerfont{footline}{size=\large,series=\tt}
+\setbeamercolor{separation line}{bg=black}
+\setbeamercolor{title in headline}{fg=black}
+\setbeamercolor{author in headline}{fg=black}
+\setbeamercolor{institute in headline}{fg=black}
+
+\setbeamercolor*{normal text}{fg=black, bg=headerbg}
+\setbeamercolor*{block body}{bg=boxbg,fg=black}
+\setbeamercolor*{block title}{fg=black,bg=boxheader}
+\setbeamerfont{block title}{size=\large,series=\bf}
+
+
+\setbeamertemplate{itemize items}[triangle]
+\setbeamertemplate{navigation symbols}{} 
+
+
+\setbeamertemplate{block begin}{
+  \vskip.75ex
+  \begin{beamercolorbox}[ht=3.5ex,dp=0.5ex,center,leftskip=-1em,colsep*=.75ex]{block title}%
+    \usebeamerfont*{block title}%
+    {\phantom{Gg}\insertblocktitle}% phantom because of baseline problem
+  \end{beamercolorbox}%
+  {\ifbeamercolorempty[bg]{block body}{}{\nointerlineskip\vskip-0.5pt}}%
+  \usebeamerfont{block body}%
+  \begin{beamercolorbox}[leftskip=1em,colsep*=.75ex,sep=0.5ex,vmode]{block body}%
+    \ifbeamercolorempty[bg]{block body}{\vskip-.25ex}{\vskip-.75ex}\vbox{}%
+  }
+  \setbeamertemplate{block end}{
+  \end{beamercolorbox}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% logo path
+\def\@logopath{None}
+\newcommand{\setlogo}[1]{\def\@logopath{#1}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\setbeamertemplate{headline}{  
+  \leavevmode
+
+  \begin{beamercolorbox}[wd=\paperwidth]{headline}
+    \begin{columns}[T]
+          \begin{column}{.25\paperwidth}
+        \vskip8ex
+        \begin{center}
+          \includegraphics[width=.50\linewidth]{\@logopath}
+        \end{center}
+        \vskip8ex
+      \end{column}
+      \begin{column}{.7\paperwidth}
+        \vskip12ex
+        \raggedleft
+        \usebeamercolor{title in headline}{\color{fg}\textbf{\LARGE{\inserttitle}}\\[1ex]}
+        \usebeamercolor{author in headline}{\color{fg}\large{\insertauthor}\\[1ex]}
+        \usebeamercolor{institute in headline}{\color{fg}\large{\insertinstitute}\\[1ex]}    
+        \usebeamercolor{date in headline}{\color{fg}\large{\insertdate}\\[1ex]} 
+      \end{column}
+
+      \begin{column}{.02\paperwidth}
+      \end{column}
+    \end{columns}
+    \vskip2ex
+  \end{beamercolorbox}
+
+  \begin{beamercolorbox}[wd=\paperwidth]{lower separation line head}
+    \rule{0pt}{3pt}
+  \end{beamercolorbox}
+
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% url
+\def\@authorurl{None}
+\newcommand{\setauthorurl}[1]{\def\@authorurl{#1}}
+% email
+\def\@authoremail{None}
+\newcommand{\setauthoremail}[1]{\def\@authoremail{#1}}
+
+
+\mode<all>
+
+% adapt height of imtemize rectangles
+\setbeamertemplate{itemize items}[triangle]
+\setbeamertemplate{itemize item}{\raisebox{0.12ex}{$\blacktriangleright$}\hskip0.1em}
+\setbeamertemplate{itemize subitem}{\raisebox{0.12ex}{$\triangleright$}\hskip0.1em}
+% or define your own template using \defbeamertemplate{itemize item}, see beameruserguide.pdf
+
+% equal font sizes for all levels
+\setbeamerfont{itemize/enumerate body}{size=\normalsize}
+\setbeamerfont{itemize/enumerate subbody}{size=\normalsize}
+\setbeamerfont{itemize/enumerate subsubbody}{size=\normalsize}

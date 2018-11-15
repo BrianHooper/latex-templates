@@ -1,0 +1,125 @@
+% Build this file, then build .bib file, then build this file again
+
+\documentclass[final,hyperref={pdfpagelabels=false}]{beamer}
+\usepackage{grffile}
+\mode<presentation>{\usetheme{Hooper}}
+\usepackage[english]{babel}
+\usepackage[latin1]{inputenc}
+\usepackage{amsmath,amsthm, amssymb, latexsym}
+\boldmath
+\usepackage[orientation=portrait,size=a0,scale=1.4,debug]{beamerposter}
+
+\usepackage{array,booktabs,tabularx}
+\newcolumntype{Z}{>{\centering\arraybackslash}X} 
+
+\listfiles
+\graphicspath{{figures/}}
+\setlogo{figures/logos/cwu}
+
+\title{\huge POSTER TITLE}
+\author{Brian Hooper}
+\institute{Central Washington University}
+\date[October 23rd, 2018]{October 23rd, 2018}
+
+\newlength{\columnheight}
+\setlength{\columnheight}{105cm}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+	\begin{frame}
+		\begin{columns}
+			%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+			% LEFT SIDE
+			%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+			\begin{column}{.49\textwidth}
+				\begin{beamercolorbox}[center,wd=\textwidth]{postercolumn}
+					\begin{minipage}[T]{.95\textwidth}
+						\parbox[t][\columnheight]{\textwidth}{
+						
+							\begin{block}{Introduction}
+								\begin{column}{.24\textwidth}
+									Column A
+									%\includegraphics{dice}
+								\end{column}
+								\begin{column}{.70\textwidth}
+									Column B
+								\end{column}
+							\end{block}\vfill
+							
+							\begin{block}{Block title}
+								Content \\
+								\begin{center} 
+									Centered Graphics
+									%\includegraphics{lcg} 
+								\end{center}
+							\end{block}\vfill
+							
+							\begin{block}{Block Title}
+								Block content.\\
+				
+								\begin{equation}
+									equation
+								\end{equation}
+							\end{block}\vfill
+							
+							\begin{block}{Block Title}
+								Content
+							\end{block}\vfill
+				
+							\begin{block}{Block Title}
+									%\lstinputlisting[language=Python]{lcg.py}
+									
+									Content
+							\end{block}\vfill
+							
+					}
+					\end{minipage}
+				\end{beamercolorbox}
+			\end{column}
+			%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+			% RIGHT SIDE
+			%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+			\begin{column}{.49\textwidth}
+				\begin{beamercolorbox}[center,wd=\textwidth]{postercolumn}
+					\begin{minipage}[T]{.95\textwidth}
+						\parbox[t][\columnheight]{\textwidth}{
+							
+							\begin{block}{Block title}
+								Content \\
+								\begin{center} 
+									Centered Graphics
+									%\includegraphics{lcg} 
+								\end{center}
+							\end{block}\vfill
+							
+							\begin{block}{Block Title}
+								Block content.\\
+				
+								\begin{equation}
+									equation \cite{knuth}
+								\end{equation}
+							\end{block}\vfill
+							
+							\begin{block}{Block Title}
+								Content
+							\end{block}\vfill
+				
+							\begin{block}{Block Title}
+									%\lstinputlisting[language=Python]{lcg.py}
+									
+									Content
+							\end{block}\vfill
+
+							\begin{block}{References}
+								\setbeamertemplate{bibliography item}[text] % Use numbered references instead of icons
+								\bibliography{hooper_poster}  % name of .bib file should match name of .tex file
+								\bibliographystyle{ieeetr}
+							\end{block}\vfill
+						}
+					\end{minipage}
+				\end{beamercolorbox}
+			\end{column}
+		\end{columns}
+	\end{frame}
+\end{document}
