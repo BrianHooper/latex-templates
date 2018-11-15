@@ -1,0 +1,37 @@
+% Compile this file once with pdflatex
+% then compile the .bib file (referenced in the last slide 
+% with the \bibliography command using bibtex
+% then recompile this file twice more with pdflatex
+% (Once for the bibliography, and another for inline citations
+
+\documentclass[12pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsfonts}
+\usepackage{color}
+\usepackage{import}
+\usepackage{graphicx}
+\usepackage{setspace}
+\usepackage{url}
+\usepackage{float}
+\setlength{\parskip}{1em}
+
+\author{Brian Hooper}
+\title{Report Title}
+\date{May 6th, 2018}
+
+\begin{document}
+	\maketitle
+\begin{center}
+	\includegraphics[width=0.40\columnwidth]{figures/logos/cwu.png}
+\end{center}
+	\pagebreak
+	\tableofcontents \pagebreak
+	
+	\section{Introduction}
+	
+	Content \cite{knuth}
+	\clearpage
+	\bibliography{hooper_report}  % name of .bib file should match name of .tex file
+	\bibliographystyle{ieeetr}
+
+\end{document}
