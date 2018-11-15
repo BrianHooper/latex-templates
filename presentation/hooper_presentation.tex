@@ -1,0 +1,66 @@
+% Compile this file once with pdflatex
+% then compile the .bib file (referenced in the last slide 
+% with the \bibliography command using bibtex
+% then recompile this file with pdflatex
+
+\documentclass[12pt]{beamer}
+\usepackage{color}
+\usepackage{import}
+\usepackage{graphicx}
+\usepackage{amsfonts}
+\usepackage{url}
+\usetheme{CambridgeUS}
+
+\beamertemplatenavigationsymbolsempty % Don't show beamer control bar
+
+%%%%%%%%%%%%%%%
+% Define Custom colors
+%%%%%%%%%%%%%%%
+\definecolor{UBCblue}{rgb}{0.04706, 0.13725, 0.26667} % UBC Blue (primary)
+\definecolor{UBCgrey}{rgb}{0.3686, 0.5255, 0.6235} % UBC Grey (secondary)
+
+\setbeamercolor{titlelike}{bg=white,fg=black}
+\setbeamercolor{palette primary}{bg=UBCblue,fg=white}
+\setbeamercolor{palette secondary}{bg=UBCblue,fg=white}
+\setbeamercolor{palette tertiary}{bg=UBCblue,fg=white}
+\setbeamercolor{palette quaternary}{bg=UBCblue,fg=white}
+\setbeamercolor{structure}{fg=UBCblue} % itemize, enumerate, etc
+\setbeamercolor{section in toc}{fg=UBCblue} % TOC sections
+
+% Override palette coloring with secondary
+\setbeamercolor{subsection in head/foot}{bg=UBCgrey,fg=white}
+%%%%%%%%%%%%%%
+% End Define Custom colors
+%%%%%%%%%%%%%%
+
+%\usepackage[backend=biber,style=authoryear,sorting=none]{biblatex}
+
+
+\title{Presentation Title}
+\author{Brian Hooper}
+\date{May 2nd, 2018}
+\titlegraphic{\includegraphics[width=0.20\columnwidth]{figures/logos/cwu.png}}
+
+
+\begin{document}
+	\frame{\titlepage}
+	\begin{frame}
+		\frametitle{Table of Contents}
+		\tableofcontents[]
+	\end{frame}
+
+	\section{Section Title}
+	\begin{frame}
+		\frametitle{Title}
+		Content \cite{knuth}
+	\end{frame}
+
+%\allowdisplaybreaks
+% Shrink text by 50% to fit more references, change to shrink=50,fragile,allowframebreaks if more than one page is needed
+\begin{frame}[shrink=50,fragile]{References} 
+\setbeamertemplate{bibliography item}[text] % Use numbered references instead of icons
+	\bibliography{hooper_presentation} % name of .bib file should match name of .tex file
+	\bibliographystyle{ieeetr}
+\end{frame}
+
+\end{document}
