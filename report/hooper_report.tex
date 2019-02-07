@@ -10,21 +10,25 @@
 \usepackage{color}
 \usepackage{import}
 \usepackage{graphicx}
-\usepackage{setspace}
-\usepackage{url}
-\usepackage{float}
+\usepackage{setspace} %parskip
+\usepackage{url} 
+\usepackage{float} % figure [H]
+\usepackage{amsmath} % align, cases
+\usepackage{subcaption}
+\usepackage{multirow}
+\usepackage{wrapfig}
 \setlength{\parskip}{1em}
 
+\title{\huge{\textbf{Title}} \\~\\ \large{subtitle}}
 \author{Brian Hooper}
-\title{Report Title}
-\date{May 6th, 2018}
+\date{date}
 
 \begin{document}
 	\maketitle
-\begin{center}
-	\includegraphics[width=0.40\columnwidth]{figures/logos/cwu.png}
-\end{center}
-	\pagebreak
+	\begin{center}
+		\includegraphics[width=0.20\columnwidth]{figures/logos/cwu.png}
+	\end{center}
+	% \pagebreak
 	\tableofcontents \pagebreak
 	
 	\section{Introduction}
